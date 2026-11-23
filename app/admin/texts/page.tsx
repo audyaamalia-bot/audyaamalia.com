@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Shell from "../Shell";
+import ConfirmButton from "@/components/ConfirmButton";
 import { getTexts } from "@/lib/data";
 import { deleteText } from "../actions";
 
@@ -19,7 +20,7 @@ export default async function TextsAdmin() {
               <td>{t.published ? <span className="badge">tampil</span> : <span className="badge off">draft</span>}</td>
               <td className="inline">
                 <Link className="btn sm ghost" href={`/admin/texts/${t.id}`}>Edit</Link>
-                <form action={deleteText}><input type="hidden" name="id" value={t.id} /><button className="btn sm danger">Hapus</button></form>
+                <form action={deleteText}><input type="hidden" name="id" value={t.id} /><ConfirmButton className="btn sm danger" message="Hapus tulisan ini?">Hapus</ConfirmButton></form>
               </td>
             </tr>
           ))}

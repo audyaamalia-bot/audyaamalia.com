@@ -1,4 +1,5 @@
 import Shell from "../Shell";
+import ConfirmButton from "@/components/ConfirmButton";
 import { getPublications } from "@/lib/data";
 import { deletePublication, savePublication } from "../actions";
 
@@ -27,7 +28,7 @@ export default async function PublicationsAdmin() {
                   <button className="btn sm ghost">Simpan</button>
                 </form>
               </td>
-              <td><form action={deletePublication}><input type="hidden" name="id" value={p.id} /><button className="btn sm danger">Hapus</button></form></td>
+              <td><form action={deletePublication}><input type="hidden" name="id" value={p.id} /><ConfirmButton className="btn sm danger" message="Hapus publikasi ini?">Hapus</ConfirmButton></form></td>
             </tr>
           ))}
         </tbody>

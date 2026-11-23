@@ -1,4 +1,5 @@
 import Shell from "../Shell";
+import ConfirmButton from "@/components/ConfirmButton";
 import { getPress } from "@/lib/data";
 import { deletePress, savePress } from "../actions";
 
@@ -29,7 +30,7 @@ export default async function PressAdmin() {
                   <button className="btn sm ghost">Simpan</button>
                 </form>
               </td>
-              <td><form action={deletePress}><input type="hidden" name="id" value={p.id} /><button className="btn sm danger">Hapus</button></form></td>
+              <td><form action={deletePress}><input type="hidden" name="id" value={p.id} /><ConfirmButton className="btn sm danger" message="Hapus entri press ini?">Hapus</ConfirmButton></form></td>
             </tr>
           ))}
         </tbody>

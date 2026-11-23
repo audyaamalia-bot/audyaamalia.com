@@ -29,7 +29,7 @@ img { max-width: 100%; display: block; }
 .hero { position: fixed; inset: 0; background: #ddd; overflow: hidden; }
 .hero .slide { position: absolute; inset: 0; background-size: cover; background-position: center; opacity: 0; transition: opacity 1.6s ease; }
 .hero .slide.active { opacity: 1; }
-.hero .name { position: absolute; left: 0; top: 50%; transform: translateY(-50%); color: #fff; font-family: var(--sans); font-weight: 700; font-size: 34px; line-height: 1.05; letter-spacing: .14em; text-transform: uppercase; text-shadow: 0 1px 6px rgba(0,0,0,.25); margin: 0; padding-left: 0; z-index: 2; }
+.hero .name { position: absolute; inset: 0; display: grid; place-items: center; text-align: center; color: #fff; font-family: var(--sans); font-weight: 700; font-size: 34px; line-height: 1.15; letter-spacing: .14em; text-transform: uppercase; text-shadow: 0 1px 6px rgba(0,0,0,.25); margin: 0; padding: 0 24px; z-index: 2; pointer-events: none; }
 .hero .name small { display: block; font-family: var(--serif); font-weight: 600; font-size: 22px; letter-spacing: .22em; margin-top: -1.6em; margin-left: .4em; opacity: .9; }
 .hero .empty { position: absolute; inset: 0; display: grid; place-items: center; color: #777; font-size: 15px; }
 

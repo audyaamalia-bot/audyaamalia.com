@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Shell from "../Shell";
+import ConfirmButton from "@/components/ConfirmButton";
 import { getWorks } from "@/lib/data";
 import { deleteWork } from "../actions";
 
@@ -22,7 +23,7 @@ export default async function WorksAdmin() {
               <td className="inline">
                 <Link className="btn sm ghost" href={`/admin/works/${w.id}`}>Edit</Link>
                 <Link className="btn sm ghost" href={`/works/${w.slug}`} target="_blank">Lihat</Link>
-                <form action={deleteWork}><input type="hidden" name="id" value={w.id} /><button className="btn sm danger">Hapus</button></form>
+                <form action={deleteWork}><input type="hidden" name="id" value={w.id} /><ConfirmButton className="btn sm danger" message="Hapus karya ini? Semua gambarnya ikut terhapus dan tidak bisa dibatalkan.">Hapus</ConfirmButton></form>
               </td>
             </tr>
           ))}
